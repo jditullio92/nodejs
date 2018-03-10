@@ -1,1 +1,2 @@
-# nodejs
+# NodeJs Repository started by John DiTullio 
+Well, gotta start somewhere...
