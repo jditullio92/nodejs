@@ -13,22 +13,17 @@ $(window).load(function (e) {
     e.preventDefault();
 
     //check browser storage for modaule data
-    if (window.sessionStorage.getItem("jnjs_modules") === null) {
-        getModulesForSession();
+    if (window.sessionStorage.getItem("jditullio92_sessiondata") === null || window.sessionStorage.getItem("jditullio92_sessiondata").length === 0) {
+        //Import data
+        loadData();
     }
-
-    //Import globals
-    mods = loadModules();
-
 });
 
 //load modules to client
-function loadModules() {
-    var mod = {
-        "module_name": "",
-        "git_repository": "https://github.com/jditullio92/nodejs/"
-    };
-    return mod;
+function loadData() {
+    var page = { "started": new Date().toISOString(), "page_name": "", "git_repository": "https://github.com/jditullio92/nodejs/" };
+    window.sessionStorage.setItem("jditullio92_sessiondata", JSON.stringify(page));
+    return;
 }
 
 //Get modules and put data into window.sessionStorage
